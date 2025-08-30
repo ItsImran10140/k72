@@ -7,14 +7,14 @@ import { useRef } from "react";
 const Agence = () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const imageDivRef = useRef(null);
-  const imageRef = useRef(null);
-  const mainImageRef = useRef(null);
-  const mainImageRefSecond = useRef(null);
-  const movingTextTopFirst = useRef(null);
-  const movingTextTopSecond = useRef(null);
-  const movingTextBottomFirst = useRef(null);
-  const movingTextBottomSecond = useRef(null);
+  const imageDivRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const mainImageRef = useRef<HTMLDivElement>(null);
+  const mainImageRefSecond = useRef<HTMLDivElement>(null);
+  const movingTextTopFirst = useRef<HTMLHeadingElement>(null);
+  const movingTextTopSecond = useRef<HTMLHeadingElement>(null);
+  const movingTextBottomFirst = useRef<HTMLHeadingElement>(null);
+  const movingTextBottomSecond = useRef<HTMLHeadingElement>(null);
 
   const imageArray = [
     "/img01.jpg",
@@ -32,21 +32,25 @@ const Agence = () => {
     "/img13.jpg",
     "/img14.jpg",
   ];
+
   useGSAP(function () {
+    if (!imageDivRef.current || !imageRef.current) return;
+
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        //
         start: "top 28%",
         end: "top -70%",
         pin: true,
         pinSpacing: true,
         pinReparent: true,
         pinType: "transform",
-        scrub: 1, // smooth scrubbing with 1s easing
+        scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (elem) => {
+          if (!imageRef.current) return;
+
           let imageIndex;
           if (elem.progress < 1) {
             imageIndex = Math.floor(elem.progress * imageArray.length);
@@ -60,12 +64,13 @@ const Agence = () => {
   });
 
   useGSAP(() => {
+    if (!mainImageRef.current) return;
+
     gsap.from(mainImageRef.current, {
       y: 400,
       duration: 2,
       scrollTrigger: {
         trigger: mainImageRef.current,
-
         scrub: 1,
         end: "top 50%",
       },
@@ -73,12 +78,13 @@ const Agence = () => {
   });
 
   useGSAP(() => {
+    if (!mainImageRefSecond.current) return;
+
     gsap.to(mainImageRefSecond.current, {
       y: -550,
       duration: 2,
       scrollTrigger: {
         trigger: mainImageRefSecond.current,
-
         scrub: 1,
         start: "top 80%",
         end: "top 45%",
@@ -87,6 +93,8 @@ const Agence = () => {
   });
 
   useGSAP(() => {
+    if (!movingTextTopFirst.current) return;
+
     gsap.to(movingTextTopFirst.current, {
       x: 400,
       repeat: -1,
@@ -94,7 +102,10 @@ const Agence = () => {
       yoyo: true,
     });
   });
+
   useGSAP(() => {
+    if (!movingTextTopSecond.current) return;
+
     gsap.to(movingTextTopSecond.current, {
       x: -400,
       repeat: -1,
@@ -102,7 +113,10 @@ const Agence = () => {
       yoyo: true,
     });
   });
+
   useGSAP(() => {
+    if (!movingTextBottomFirst.current) return;
+
     gsap.from(movingTextBottomFirst.current, {
       x: 400,
       repeat: -1,
@@ -110,7 +124,10 @@ const Agence = () => {
       yoyo: true,
     });
   });
+
   useGSAP(() => {
+    if (!movingTextBottomSecond.current) return;
+
     gsap.from(movingTextBottomSecond.current, {
       x: -400,
       repeat: -1,
@@ -147,7 +164,7 @@ const Agence = () => {
               dit non aux gros egos, même le vôtre. Une marque est vivante. Elle
               a des valeurs, une personnalité, une histoire. Si on oublie ça, on
               peut faire de bons chiffres à court terme, mais on la tue à long
-              terme. C’est pour ça qu’on s’engage à donner de la perspective,
+              terme. C'est pour ça qu'on s'engage à donner de la perspective,
               pour bâtir des marques influentes.
             </p>
           </div>
@@ -179,7 +196,7 @@ const Agence = () => {
           </div>
           <div className=" h-56 flex items-center">
             <p className="text-lg font-semibold  ">
-              Our Culture_ We’re open to <br /> each other. Period. The team{" "}
+              Our Culture_ We're open to <br /> each other. Period. The team{" "}
               <br /> works together to create a <br /> space that makes us
               proud.
             </p>
@@ -226,7 +243,6 @@ const Agence = () => {
             />
           </div>
         </div>
-        {/* <div className="bg-purple-400 w-full mt-[-100px] h-30 z-30 absolute"></div> */}
         <div className="text-[#D3FD50] w-full h-30 mb-10  absolute z-30 flex justify-between mt-[-100px]">
           <h2
             ref={movingTextBottomFirst}
