@@ -39,14 +39,14 @@ const Projects = () => {
 
   useGSAP(function () {
     gsap.from(".hero", {
-      height: "80px",
+      height: 0,
       stagger: {
         amount: 0.5,
       },
       scrollTrigger: {
         trigger: ".lol",
         start: "top 100%",
-        end: "top -150%",
+        end: "top -250%",
         scrub: true,
       },
     });
@@ -64,7 +64,7 @@ const Projects = () => {
           return (
             <div
               key={idx}
-              className="hero w-full lg:h-[750px] mb-4 flex lg:flex-row flex-col lg:gap-4 gap-2"
+              className="hero w-full lg:h-[450px] mb-4 flex lg:flex-row flex-col lg:gap-4 gap-2"
             >
               <ProjectCard image1={elem.image1} image2={elem.image2} />
             </div>

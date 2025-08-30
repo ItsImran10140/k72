@@ -9,6 +9,8 @@ const Agence = () => {
 
   const imageDivRef = useRef(null);
   const imageRef = useRef(null);
+  const mainImageRef = useRef(null);
+  const mainImageRefSecond = useRef(null);
 
   const imageArray = [
     "/img01.jpg",
@@ -30,7 +32,7 @@ const Agence = () => {
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        // markers: true,
+        //
         start: "top 28%",
         end: "top -70%",
         pin: true,
@@ -53,12 +55,39 @@ const Agence = () => {
     });
   });
 
+  useGSAP(() => {
+    gsap.from(mainImageRef.current, {
+      y: 400,
+      duration: 2,
+      scrollTrigger: {
+        trigger: mainImageRef.current,
+
+        scrub: 1,
+        end: "top 50%",
+      },
+    });
+  });
+
+  useGSAP(() => {
+    gsap.to(mainImageRefSecond.current, {
+      y: -550,
+      duration: 2,
+      scrollTrigger: {
+        trigger: mainImageRefSecond.current,
+
+        scrub: 1,
+        start: "top 80%",
+        end: "top 45%",
+      },
+    });
+  });
+
   return (
     <div className="parent">
       <div id="page1" className="py-1 ">
         <div
           ref={imageDivRef}
-          className="absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-96 -top-80 lg:left-[30vw] left-[30vw]"
+          className="absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-36 -top-30 lg:left-[30vw] left-[30vw]"
         >
           <img
             ref={imageRef}
@@ -75,7 +104,7 @@ const Agence = () => {
             </h1>
           </div>
           <div className="lg:pl-[40%] lg:mt-20 mt-4 p-3">
-            <p className="lg:text-6xl text-xl leading-tight">
+            <p className="lg:text-4xl text-xl leading-tight">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               Notre curiosité nourrit notre créativité. On reste humbles et on
               dit non aux gros egos, même le vôtre. Une marque est vivante. Elle
@@ -87,7 +116,36 @@ const Agence = () => {
           </div>
         </div>
       </div>
-      <div id="page2" className=" h-screen"></div>
+      <div id="page2" className=" h-screen bg-amber-200"></div>
+      <div
+        id="page2"
+        className=" h-[1400px] bg-neutral-900 relative flex flex-col justify-center w-full items-center"
+      >
+        <div className="bg-red-400 w-full h-30 mb-10 mt-[-400px] z-0 absolute "></div>
+        <div className="border border-black w-full h-full flex flex-col pt-40 justify-center items-center ">
+          <div
+            ref={mainImageRef}
+            className=" w-[500px] overflow-hidden rounded-3xl h-[600px] z-20 "
+          >
+            <img
+              src="/img08.jpg"
+              alt="Image"
+              className="object-cover h-full w-full"
+            />
+          </div>
+          <div
+            ref={mainImageRefSecond}
+            className="imageSlide bg-pink-400 w-[500px] overflow-hidden  mb-10 rounded-3xl h-[650px] z-30"
+          >
+            <img
+              src="/img14.jpg"
+              alt="Image"
+              className="object-cover h-full w-full"
+            />
+          </div>
+        </div>
+        <div className="bg-purple-400 w-full mt-[-100px] h-30 z-30 absolute"></div>
+      </div>
     </div>
   );
 };
