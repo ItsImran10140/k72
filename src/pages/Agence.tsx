@@ -11,6 +11,10 @@ const Agence = () => {
   const imageRef = useRef(null);
   const mainImageRef = useRef(null);
   const mainImageRefSecond = useRef(null);
+  const movingTextTopFirst = useRef(null);
+  const movingTextTopSecond = useRef(null);
+  const movingTextBottomFirst = useRef(null);
+  const movingTextBottomSecond = useRef(null);
 
   const imageArray = [
     "/img01.jpg",
@@ -82,6 +86,39 @@ const Agence = () => {
     });
   });
 
+  useGSAP(() => {
+    gsap.to(movingTextTopFirst.current, {
+      x: 400,
+      repeat: -1,
+      duration: 3,
+      yoyo: true,
+    });
+  });
+  useGSAP(() => {
+    gsap.to(movingTextTopSecond.current, {
+      x: -400,
+      repeat: -1,
+      duration: 3,
+      yoyo: true,
+    });
+  });
+  useGSAP(() => {
+    gsap.from(movingTextBottomFirst.current, {
+      x: 400,
+      repeat: -1,
+      duration: 3,
+      yoyo: true,
+    });
+  });
+  useGSAP(() => {
+    gsap.from(movingTextBottomSecond.current, {
+      x: -400,
+      repeat: -1,
+      duration: 3,
+      yoyo: true,
+    });
+  });
+
   return (
     <div className="parent">
       <div id="page1" className="py-1 ">
@@ -116,13 +153,58 @@ const Agence = () => {
           </div>
         </div>
       </div>
-      <div id="page2" className=" h-screen bg-amber-200"></div>
+      <div id="page2" className=" h-screen  flex items-center justify-center">
+        <div className="grid grid-cols-3   w-full px-35">
+          <div className=" h-44 text-lg font-semibold ">Expertise</div>
+          <div className=" h-44 text-lg font-semibold ">
+            <p>Strategy</p>
+            <p>Advertising</p>
+            <p>Branding</p>
+            <p>Design</p>
+            <p>Content</p>
+          </div>
+          <div className=" h-44"></div>
+          <div className=" h-56 flex items-center">
+            <p className="text-lg font-semibold  ">
+              Our Work_ Born in curiosity, raised by <br /> dedication and fed
+              with a steady diet of <br /> creativity.
+            </p>
+          </div>
+          <div className=" h-56 flex items-center">
+            <p className="text-lg font-semibold  ">
+              Our Creative_ Simmering in an environment <br /> where talent can
+              come to a full boil. <br /> Encouraged to become the best versions
+              of <br /> ourselves.
+            </p>
+          </div>
+          <div className=" h-56 flex items-center">
+            <p className="text-lg font-semibold  ">
+              Our Culture_ We’re open to <br /> each other. Period. The team{" "}
+              <br /> works together to create a <br /> space that makes us
+              proud.
+            </p>
+          </div>
+        </div>
+      </div>
       <div
         id="page2"
         className=" h-[1400px] bg-neutral-900 relative flex flex-col justify-center w-full items-center"
       >
-        <div className="bg-red-400 w-full h-30 mb-10 mt-[-400px] z-0 absolute "></div>
-        <div className="border border-black w-full h-full flex flex-col pt-40 justify-center items-center ">
+        <div className="text-[#D3FD50] w-full h-30 mb-10 mt-[-400px] z-0 absolute flex justify-between">
+          <h2
+            ref={movingTextTopFirst}
+            className="whitespace-nowrap font-[font2] lg:text-[6vw] text-3xl  text-start lg:leading-[0.8] lg:pt-10  uppercase"
+          >
+            Pour Tout
+          </h2>
+          <h2
+            ref={movingTextTopSecond}
+            className="whitespace-nowrap font-[font2] lg:text-[6vw] text-3xl  text-end lg:leading-[0.8] lg:pt-10  uppercase"
+          >
+            Pour Tout
+          </h2>
+        </div>
+        <div className=" w-full h-full flex flex-col pt-40 justify-center items-center ">
           <div
             ref={mainImageRef}
             className=" w-[500px] overflow-hidden rounded-3xl h-[600px] z-20 "
@@ -144,7 +226,62 @@ const Agence = () => {
             />
           </div>
         </div>
-        <div className="bg-purple-400 w-full mt-[-100px] h-30 z-30 absolute"></div>
+        {/* <div className="bg-purple-400 w-full mt-[-100px] h-30 z-30 absolute"></div> */}
+        <div className="text-[#D3FD50] w-full h-30 mb-10  absolute z-30 flex justify-between mt-[-100px]">
+          <h2
+            ref={movingTextBottomFirst}
+            className="whitespace-nowrap font-[font2] lg:text-[6vw] text-3xl  text-start lg:leading-[0.8] lg:pt-10  uppercase"
+          >
+            Pour Tout
+          </h2>
+          <h2
+            ref={movingTextBottomSecond}
+            className="whitespace-nowrap font-[font2] lg:text-[6vw] text-3xl  text-end lg:leading-[0.8] lg:pt-10  uppercase"
+          >
+            Pour Tout
+          </h2>
+        </div>
+        <div className="absolute rounded-t-[100px] bottom-0 h-[500px] w-full bg-black z-40 overflow-hidden flex flex-col justify-between">
+          <div className="border flex justify-between items-center border-black h-24 w-full">
+            <div className="pl-20 mt-2  text-white pr-20 flex justify-around h-20 items-center">
+              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+                FB
+              </span>
+              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+                IG
+              </span>
+              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+                IN
+              </span>
+              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
+                BE
+              </span>
+            </div>
+            <div>
+              <div className="pr-20 mt-2  text-white">
+                <span className="text-5xl font-semibold uppercase border-2 border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
+                  Contact ♥
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className=" text-center  h-12">
+            <div className="flex  w-[50%] mx-auto justify-around">
+              <p className="text-white text-2xl uppercase hover:text-[#D3FD50] cursor-pointer">
+                Privacy Policy
+              </p>
+              <p className="text-white text-2xl uppercase hover:text-[#D3FD50] cursor-pointer">
+                Privacy Notice
+              </p>
+              <p className="text-white text-2xl uppercase hover:text-[#D3FD50] cursor-pointer">
+                Ethics Report
+              </p>
+              <p className="text-white text-2xl uppercase hover:text-[#D3FD50] cursor-pointer">
+                Concent Choice
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
