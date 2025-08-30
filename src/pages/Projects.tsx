@@ -72,32 +72,32 @@ const Projects = () => {
         })}
       </div>
       <div>
-        <div className="mb-[-20px] rounded-t-[100px] bottom-0 h-[500px] w-full bg-black  overflow-hidden flex flex-col justify-between ">
-          <div className="border flex justify-between items-center border-black h-24 w-full">
-            <div className="pl-20 mt-2  text-white pr-20 flex justify-around h-20 items-center">
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+        <div className="mb-[-20px] lg:rounded-t-[100px] rounded-t-[50px] bottom-0 h-[500px] w-full bg-black  overflow-hidden flex flex-col justify-between ">
+          <div className="border lg:flex lg:justify-between lg:items-center  lg:h-24 w-full ">
+            <div className="lg:pl-20 lg:mt-2 mt-8  text-white pr-20 flex justify-around lg:h-20 items-center">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
                 FB
               </span>
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
                 IG
               </span>
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
                 IN
               </span>
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
                 BE
               </span>
             </div>
             <div>
-              <div className="pr-20 mt-2  text-white">
-                <span className="text-5xl font-semibold uppercase border-2 border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
+              <div className="pr-20  lg:mt-2 mt-[50px] text-white">
+                <span className="lg:text-5xl font-semibold uppercase border-2 border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
                   Contact ♥
                 </span>
               </div>
             </div>
           </div>
           <div className=" text-center  h-12">
-            <div className="flex  w-[70%] mx-auto justify-around">
+            <div className="lg:flex  w-[50%] mx-auto lg:justify-around lg:mt-0 mt-[-180px]">
               <p className="text-white text-2xl uppercase hover:text-[#D3FD50] cursor-pointer">
                 Privacy Policy
               </p>

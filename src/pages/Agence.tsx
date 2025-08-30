@@ -171,31 +171,33 @@ const Agence = () => {
         </div>
       </div>
       <div id="page2" className=" h-screen  flex items-center justify-center">
-        <div className="grid grid-cols-3   w-full px-35">
-          <div className=" h-44 text-lg font-semibold ">Expertise</div>
-          <div className=" h-44 text-lg font-semibold ">
+        <div className="lg:grid lg:grid-cols-3 grid grid-cols-2 w-full lg:px-35">
+          <div className="lg:h-44 text-sm lg:text-lg font-semibold  px-3">
+            Expertise
+          </div>
+          <div className=" lg:h-44 text-sm lg:text-lg font-semibold  px-3">
             <p>Strategy</p>
             <p>Advertising</p>
             <p>Branding</p>
             <p>Design</p>
             <p>Content</p>
           </div>
-          <div className=" h-44"></div>
-          <div className=" h-56 flex items-center">
-            <p className="text-lg font-semibold  ">
+          <div className=" lg:h-44"></div>
+          <div className=" h-56 flex items-center px-3">
+            <p className="lg:text-lg text-sm font-semibold  ">
               Our Work_ Born in curiosity, raised by <br /> dedication and fed
               with a steady diet of <br /> creativity.
             </p>
           </div>
-          <div className=" h-56 flex items-center">
-            <p className="text-lg font-semibold  ">
+          <div className=" lg:h-56 flex items-center px-3">
+            <p className="lg:text-lg text-sm font-semibold  ">
               Our Creative_ Simmering in an environment <br /> where talent can
               come to a full boil. <br /> Encouraged to become the best versions
               of <br /> ourselves.
             </p>
           </div>
-          <div className=" h-56 flex items-center">
-            <p className="text-lg font-semibold  ">
+          <div className=" lg:h-56 flex items-center px-3">
+            <p className="lg:text-lg text-sm font-semibold  ">
               Our Culture_ We're open to <br /> each other. Period. The team{" "}
               <br /> works together to create a <br /> space that makes us
               proud.
@@ -224,7 +226,7 @@ const Agence = () => {
         <div className=" w-full h-full flex flex-col pt-40 justify-center items-center ">
           <div
             ref={mainImageRef}
-            className=" w-[500px] overflow-hidden rounded-3xl h-[600px] z-20 "
+            className=" lg:w-[500px] overflow-hidden rounded-3xl h-[600px] z-20  w-[350px]"
           >
             <img
               src="/img08.jpg"
@@ -234,7 +236,7 @@ const Agence = () => {
           </div>
           <div
             ref={mainImageRefSecond}
-            className="imageSlide bg-pink-400 w-[500px] overflow-hidden  mb-10 rounded-3xl h-[650px] z-30"
+            className="imageSlide bg-pink-400 lg:w-[500px] overflow-hidden  mb-10 rounded-3xl h-[650px] z-30 w-[350px]"
           >
             <img
               src="/img14.jpg"
@@ -257,32 +259,32 @@ const Agence = () => {
             Pour Tout
           </h2>
         </div>
-        <div className="absolute rounded-t-[100px] bottom-0 h-[500px] w-full bg-black z-40 overflow-hidden flex flex-col justify-between">
-          <div className="border flex justify-between items-center border-black h-24 w-full">
-            <div className="pl-20 mt-2  text-white pr-20 flex justify-around h-20 items-center">
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+        <div className="absolute lg:rounded-t-[100px] rounded-t-[50px] bottom-0 h-[500px] w-full bg-black z-40 overflow-hidden flex flex-col justify-between">
+          <div className="border lg:flex lg:justify-between lg:items-center  lg:h-24 w-full ">
+            <div className="lg:pl-20 lg:mt-2 mt-8  text-white pr-20 flex justify-around lg:h-20 items-center">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
                 FB
               </span>
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
                 IG
               </span>
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer mx-2 hover:border-[#D3FD50]">
                 IN
               </span>
-              <span className="text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
+              <span className="lg:text-5xl font-semibold uppercase border-2 h-full flex items-center border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
                 BE
               </span>
             </div>
             <div>
-              <div className="pr-20 mt-2  text-white">
-                <span className="text-5xl font-semibold uppercase border-2 border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
+              <div className="pr-20  lg:mt-2 mt-[50px] text-white">
+                <span className="lg:text-5xl font-semibold uppercase border-2 border-white py-1 px-8  rounded-full hover:text-[#D3FD50] cursor-pointer hover:border-[#D3FD50]">
                   Contact ♥
                 </span>
               </div>
             </div>
           </div>
           <div className=" text-center  h-12">
-            <div className="flex  w-[50%] mx-auto justify-around">
+            <div className="lg:flex  w-[50%] mx-auto lg:justify-around lg:mt-0 mt-[-180px]">
               <p className="text-white text-2xl uppercase hover:text-[#D3FD50] cursor-pointer">
                 Privacy Policy
               </p>
